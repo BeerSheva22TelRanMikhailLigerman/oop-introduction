@@ -46,7 +46,7 @@ class ShapeTests {
 	@Test
 	
 	void SquareRightTriangleTest() {
-		SquareRightTriangle squareRightTriangle = new SquareRightTriangle(3);
+		SquareRightTriangle squareRightTriangle = new SquareRightTriangle(4);
 		displayStrings(squareRightTriangle.presentation(20));
 	}
 	
@@ -59,5 +59,7 @@ class ShapeTests {
 			System.out.println(str);
 		}
 	}
+	
+	
 
 }
