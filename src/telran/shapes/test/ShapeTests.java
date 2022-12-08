@@ -35,7 +35,7 @@ class ShapeTests {
 	}
 	
 	@Test		
-	
+	@Disabled
 	void SquareLeftTriangleTest() {
 		SquareLeftTriangle squareLeftTriangle = new SquareLeftTriangle(8);
 		displayStrings(squareLeftTriangle.presentation(10));
@@ -44,10 +44,17 @@ class ShapeTests {
 	
 	
 	@Test
-	
+	@Disabled
 	void SquareRightTriangleTest() {
 		SquareRightTriangle squareRightTriangle = new SquareRightTriangle(4);
 		displayStrings(squareRightTriangle.presentation(20));
+	}
+	
+@Test
+	
+	void numberOfFigure() {
+		StringOfObject stringOfObject = new StringOfObject(10, 5, "S.R.S.SLT.SRT");
+		displayStrings(stringOfObject.presentation(4));
 	}
 	
 	
