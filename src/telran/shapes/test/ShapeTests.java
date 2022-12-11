@@ -53,8 +53,8 @@ class ShapeTests {
 @Test
 	
 	void numberOfFigure() {
-		StringOfObject stringOfObject = new StringOfObject(10, 5, "S.R.S.SLT.SRT");
-		displayStrings(stringOfObject.presentation(4));
+		StringOfObject stringOfObject = new StringOfObject(5, 10, "SLT.S.R.S.SLT.SRT");
+		displayStrings(stringOfObject.presentation(2));
 	}
 	
 	

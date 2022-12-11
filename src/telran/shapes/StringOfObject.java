@@ -14,6 +14,7 @@ public class StringOfObject extends Rectangle {
 	public StringOfObject(int width, int height, String string) {
 		super(width, height);
 		this.matrixString = string;	
+		
 	}
 	
 	public String[] presentation(int offset) {
@@ -62,4 +63,6 @@ public class StringOfObject extends Rectangle {
 	private String delimetr() {
 		return  "(\\.)";
 	}
+	
+	
  }
