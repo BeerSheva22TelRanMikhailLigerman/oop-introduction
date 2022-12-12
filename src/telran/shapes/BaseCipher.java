@@ -5,14 +5,20 @@ public class BaseCipher {
 	String key;
 	
 	public BaseCipher (int keyLenght) {
-		this.keyLenght =  keyLenght < 2 ? 2 : keyLenght;
-		this.keyLenght =  keyLenght > 94 ? 94 : this.keyLenght;
-		this.key = getKey(keyLenght);
-		//this.key = "0123456789abcdef";
+		this.keyLenght = checkKeyLenght(keyLenght);
+		this.key = getKey(this.keyLenght);
+		}
+	
+	
+	
+	private int checkKeyLenght(int keyLenght) {
+		int res = keyLenght < 2 ? 2 : keyLenght;
+		res =  keyLenght > 94 ? 94 : res;
+		return res;
 	}
-	
-	
-	
+
+
+
 	private String getKey(int keyLenght) {		
 		char[] res = new char[keyLenght];
 		boolean[] helper = new boolean[94];
@@ -55,6 +61,16 @@ public class BaseCipher {
 		}
 		return res;
 	}
+	
+	/*
+	 * for visual testing only
+	 * the key set by this method must match the length of the key in the class instance
+	 */
+	public void setKey(String key) {
+		this.key = key;
+	}
+	
+	
 	
 	
 

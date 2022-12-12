@@ -50,8 +50,8 @@ class ShapeTests {
 		displayStrings(squareRightTriangle.presentation(20));
 	}
 	
-@Test
-	
+	@Test
+	@Disabled
 	void numberOfFigure() {
 		StringOfObject stringOfObject = new StringOfObject(5, 10, "SLT.S.R.S.SLT.SRT");
 		displayStrings(stringOfObject.presentation(2));
@@ -59,14 +59,40 @@ class ShapeTests {
 	
 	
 	
-	
+	@Test
+	void BaseChiperTest() {
+		int testNumber = 123;
+		BaseCipher kod = new BaseCipher(10);
+		String testString = kod.cipher(testNumber);
+		assertEquals(testNumber, kod.decipher(testString));
+		
+		BaseCipher kod2 = new BaseCipher(1);
+		testString = kod2.cipher(testNumber);
+		assertEquals(testNumber, kod2.decipher(testString));
+		
+		BaseCipher kod3 = new BaseCipher(95);
+		testString = kod3.cipher(testNumber);
+		assertEquals(testNumber, kod3.decipher(testString));
+				
+		BaseCipher kod4 = new BaseCipher(16);
+		kod4.setKey("0123456789abcdef");
+		testNumber = 11259375;
+		testString = kod4.cipher(testNumber);
+		assertEquals("abcdef", kod4.cipher(testNumber));
+		assertEquals(testNumber, kod4.decipher("abcdef"));
+				
+		BaseCipher kod5 = new BaseCipher(2);
+		kod5.setKey("01");
+		testNumber = 10;
+		testString = kod5.cipher(testNumber);
+		assertEquals("1010", kod5.cipher(testNumber));
+		assertEquals(testNumber, kod5.decipher("1010"));
+	}
 	
 	private void displayStrings(String strings[]) {
 		for(String str: strings) {
 			System.out.println(str);
 		}
 	}
-	
-	
 
 }
