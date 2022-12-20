@@ -25,7 +25,7 @@ class ShapeTests {
 	void squareTest() {
 		Square square = new Square(3);
 		displayStrings(square.presentation(4));
-		square.setWidht(5);
+		square.setWidth(5);
 		assertEquals(5, square.getHigth());
 		assertEquals(5, square.getWidth());
 		square.setHeight(6);
@@ -60,6 +60,7 @@ class ShapeTests {
 	
 	
 	@Test
+	@Disabled
 	void BaseChiperTest() {
 		int testNumber = 123;
 		BaseCipher kod = new BaseCipher(10);
@@ -89,6 +90,41 @@ class ShapeTests {
 		assertEquals(testNumber, kod5.decipher("1010"));
 	}
 	
+	@Test
+	@Disabled
+	void testCanvas() {
+		Canvas canvas1 = new Canvas(4, 5, new Shape[] {new SquareRightTriangle(3), new Square(2), new SquareLeftTriangle(8)});
+		Canvas canvas2 = new Canvas(5, 4, new Shape[] {new Rectangle(3, 7), canvas1, new Rectangle(4,3)});
+		canvas1.setDirection("raw");
+		canvas2.setDirection("column");
+		canvas1.setMargin(1);
+		canvas2.setMargin(1);
+		displayStrings(canvas2.presentation(1));
+	}
+	
+	Canvas canvas = new Canvas(10, 20,
+			new Shape[] { new Rectangle(10, 3), new Square(10), new SquareLeftTriangle(10) });
+	Shape[] shapes = { new Rectangle(10, 3), new Square(10), new SquareLeftTriangle(10), new SquareRightTriangle(10),
+			canvas, new Square(10) };
+	
+	@Test
+	
+	void canvasInRowTest() {
+		Canvas canvas = new Canvas(10, 4, shapes);
+		canvas.setMargin(3);
+		displayStrings(canvas.presentation(2));
+	}
+
+	@Test
+	
+	void canvasInColumnTest() {
+		Canvas canvas = new Canvas(10, 4, shapes);
+		canvas.setDirection("column");
+		this.canvas.setDirection("column");
+		canvas.setMargin(1);
+		displayStrings(canvas.presentation(2));
+
+	}
 	private void displayStrings(String strings[]) {
 		for(String str: strings) {
 			System.out.println(str);
