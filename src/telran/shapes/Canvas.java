@@ -99,5 +99,6 @@ public class Canvas extends Shape {
 	public int getHeight() {
 		return direction.equals("row") ? super.getHeight() : (heightsSum() + margin * (shapes.length - 1));
 	}
+	
 
 }
