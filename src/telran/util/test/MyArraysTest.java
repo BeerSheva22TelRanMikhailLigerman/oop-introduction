@@ -22,17 +22,17 @@ class MyArraysTest {
 	}
 	
 	@Test 
-	@Disabled
+	
 	void binarySearchStringTest() {
 		String[] strings = { "", "1", "23", "456", "7890" };
-		assertEquals(2, MyArrays.binarySearch(strings, "19", new StringLengthComparator()));
+		assertEquals(2, MyArrays.binarySearch(strings, "23", new StringLengthComparator()));
 		assertEquals(0, MyArrays.binarySearch(strings, "", new StringLengthComparator()));
 		assertEquals(-6, MyArrays.binarySearch(strings, "55555", new StringLengthComparator()));
 
 		
 	}
 	@Test
-	@Disabled
+	
 	void binarySearchIntegerTest() {
 		Integer[] numbers = { 1, 2, 3, 5, 6, 7, 8, 9 };	
 		assertEquals(3, MyArrays.binarySearch(numbers, 5, new IntegerComparator()));
